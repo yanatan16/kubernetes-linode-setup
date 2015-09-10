@@ -1,1 +1,1 @@
-DAEMON_ARGS="$DAEMON_ARGS --etcd-endpoints=http://kube-master-01:4001"
+DAEMON_ARGS="--etcd-endpoints=http://kube-master-01:4001 -v=2"
