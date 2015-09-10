@@ -87,6 +87,17 @@ systemctl enable /etc/systemd/system/flanneld.service
 systemctl start flanneld.service
 ```
 
+### Reconfigure docker
+
+We have to reconfigure docker once flannel is running to get routing correct. This is a bit chicken and the egg, but it should work.
+
+```
+systemctl stop docker kubelet
+cp systemd/docker.service /lib/systemd/system/docker.service
+systemctl daemon-reload
+systemctl start docker kubelet
+```
+
 ### Test
 
 Setup kubectl
