@@ -17,15 +17,21 @@ apt-get update
 apt-get upgrade -y
 ```
 
-### get binaries
+### get binaries and files
 
 ```
+mkdir -p /tmp/kube-build && cd /tmp/kube-build
 wget https://github.com/kubernetes/kubernetes/releases/download/v1.0.3/kubernetes.tar.gz
 tar xzvf kubernetes.tar.gz
 tar xzvf kubernetes/server/kubernetes-server-linux-amd64.tar.gz
 kubernetes/cluster/ubuntu/build.sh
 cp binaries/kubectl binaries/minion/* /usr/bin
 # MASTER ONLY: cp binaries/master/* /usr/bin
+cd -
+```
+
+```
+git clone https://github.com/yanatan16/kubernetes-linode-setup
 ```
 
 ### Docker

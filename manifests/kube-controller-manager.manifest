@@ -19,7 +19,7 @@
     "command": [
                  "/bin/sh",
                  "-c",
-                 "/hyperkube controller-manager --master=10.10.0.1:8080 --cluster-name=test --cluster-cidr=10.10.0.0/16 --allocate-node-cidrs=true --v=2 1>>/var/log/kubernetes/controller-manager.log 2>&1"
+                 "/hyperkube controller-manager --master=10.10.0.1:8080 --cluster-name=test --cluster-cidr=10.10.0.0/16 --v=2 1>>/var/log/kubernetes/controller-manager.log 2>&1"
                ],
     "livenessProbe": {
       "httpGet": {
