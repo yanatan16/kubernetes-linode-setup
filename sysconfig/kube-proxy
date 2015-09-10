@@ -1,1 +1,1 @@
-DAEMON_ARGS="$DAEMON_ARGS --api-servers=http://kube-master-01 --v=2"
+DAEMON_ARGS="$DAEMON_ARGS --api-servers=http://kube-master-01:8080 --v=2"
