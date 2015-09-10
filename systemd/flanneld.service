@@ -1,0 +1,12 @@
+[Unit]
+Description=Flannel Network Overlay
+Documentation=https://github.com/coreos/flannel
+
+[Service]
+EnvironmentFile=/etc/sysconfig/flanneld
+ExecStart=/usr/bin/flanneld "$DAEMON_ARGS"
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

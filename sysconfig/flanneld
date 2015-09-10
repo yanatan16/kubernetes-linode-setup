@@ -1,0 +1,1 @@
+DAEMON_ARGS="$DAEMON_ARGS --etcd-endpoints=http://127.0.0.1:4001"
