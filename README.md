@@ -86,3 +86,20 @@ cp systemd/flanneld.service /etc/systemd/system
 systemctl enable /etc/systemd/system/flanneld.service
 systemctl start flanneld.service
 ```
+
+### Test
+
+Setup kubectl
+
+```
+mkdir ~/.kube
+cp kubeconfig ~/.kube/config
+```
+
+```
+$ kubectl get nodes
+NAME             LABELS                                  STATUS
+kube-master-01   kubernetes.io/hostname=kube-master-01   Ready
+kube-pool-01     kubernetes.io/hostname=kube-pool-01     Ready
+kube-pool-02     kubernetes.io/hostname=kube-pool-02     Ready
+```
