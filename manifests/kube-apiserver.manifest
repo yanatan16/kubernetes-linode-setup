@@ -22,7 +22,8 @@
     "command": [
                  "/bin/sh",
                  "-c",
-                 "/hyperkube apiserver --address=0.0.0.0 --service-cluster-ip-range=10.0.0.0/16 --etcd_servers=http://10.10.0.1:4001 --cluster-name=test  --allow_privileged=false --v=2 1>>/var/log/kubernetes/apiserver.log 2>&1"
+                 "/hyperkube apiserver --address=0.0.0.0 --service-cluster-ip-range=10.0.0.0/16 --etcd_servers=http://10.10.0.1:4001 --secure-port=443 --cluster-name=test --tls_cert_file=/srv/kubernetes/server.cert
+                 --tls_private_key_file=/srv/kubernetes/server.key --client_ca_file=/srv/kubernetes/ca.crt --allow_privileged=false --v=2 1>>/var/log/kubernetes/apiserver.log 2>&1"
                ],
     "livenessProbe": {
       "httpGet": {
@@ -34,10 +35,13 @@
       "timeoutSeconds": 15
     },
     "ports":[
+      {"name":"https",
+       "containerPort": 443,
+       "hostPort": 443},
       {"name": "local",
-        "containerPort": 8080,
-        "hostPort": 8080}
-        ],
+       "containerPort": 8080,
+       "hostPort": 8080}
+       ],
     "volumeMounts": [
         { "name": "srvkube",
         "mountPath": "/srv/kubernetes",
