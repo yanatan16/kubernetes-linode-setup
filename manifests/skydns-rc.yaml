@@ -8,7 +8,7 @@ metadata:
     version: v8
     kubernetes.io/cluster-service: "true"
 spec:
-  replicas: {{ pillar['dns_replicas'] }}
+  replicas: 1
   selector:
     k8s-app: kube-dns
     version: v8
