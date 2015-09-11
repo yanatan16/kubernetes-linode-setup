@@ -6,8 +6,8 @@ Requires=docker.socket
 
 [Service]
 EnvironmentFile=-/run/flannel/subnet.env
-EnvironmentFile=-/etc/default/docker
-ExecStart=/usr/bin/docker -d -H fd:// "$DAEMON_ARGS"
+EnvironmentFile=-/etc/sysconfig/docker
+ExecStart=/usr/bin/docker -d -H fd:// "$DOCKER_OPTS"
 MountFlags=slave
 LimitNOFILE=1048576
 LimitNPROC=1048576
