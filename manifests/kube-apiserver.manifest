@@ -7,6 +7,9 @@
 },
 "spec":{
 "hostNetwork": true,
+"selector": {
+  "k8s-app": "kube-apiserver"
+},
 "containers":[
     {
     "name": "kube-apiserver",

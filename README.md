@@ -1,3 +1,8 @@
+## Overview
+
+1) Setup master all the way
+2) Setup minions then
+
 ```
 CLUSTER_NAME=test
 
