@@ -1,1 +1,1 @@
-DAEMON_ARGS="--master=http://kube-master-01:8080 --v=2"
+DAEMON_ARGS="--master=https://kube-master-01 --kubeconfig=/var/lib/kube-proxy/kubeconfig --v=2"
