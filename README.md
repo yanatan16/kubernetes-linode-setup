@@ -39,6 +39,15 @@ cd -
 git clone https://github.com/yanatan16/kubernetes-linode-setup
 ```
 
+### Certs
+
+On the master:
+
+```
+bin/make-ca-cert.sh <PUBLIC_IP> IP:10.0.0.1,DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.cluster.local,DNS:kube-master-01
+ls /srv/kubernetes
+```
+
 ### Docker
 
 First configure the bridge: `kubelet --configure-cbr0=true --pod-cidr=10.10.x.0/24` and ctrl+c to kill kubelet after it logs `Starting kubelet main sync loop.`
