@@ -24,6 +24,7 @@ cert_dir=/srv/kubernetes
 cert_group=kube-cert
 
 mkdir -p "$cert_dir"
+groupadd "$cert_group" || date > /dev/null
 
 use_cn=false
 
