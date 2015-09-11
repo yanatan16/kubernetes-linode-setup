@@ -114,3 +114,13 @@ kube-master-01   kubernetes.io/hostname=kube-master-01   Ready
 kube-pool-01     kubernetes.io/hostname=kube-pool-01     Ready
 kube-pool-02     kubernetes.io/hostname=kube-pool-02     Ready
 ```
+
+### Test
+
+See https://github.com/kubernetes/kubernetes/blob/v1.0.5/examples/simple-nginx.md
+
+and hopefully you can ping the apiserver service:
+
+```
+curl https://10.0.0.1:443
+```
