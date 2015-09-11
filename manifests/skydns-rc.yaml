@@ -47,7 +47,12 @@ spec:
             memory: 50Mi
         args:
         # command = "/kube2sky"
+        - -kube_master_url=https://10.0.0.1
+        - -kubecfg_file=/var/lib/kubelet/kubeconfig
         - -domain=cluster.local
+        volumeMounts:
+        - name: kubeconfig
+          mountPath: /var/lib/kubelet
       - name: skydns
         image: gcr.io/google_containers/skydns:2015-03-11-001
         resources:
@@ -88,4 +93,7 @@ spec:
       volumes:
       - name: etcd-storage
         emptyDir: {}
+      - name: kubeconfig
+        hostPath:
+          path: /var/lib/kubelet
       dnsPolicy: Default  # Don't use cluster DNS.
