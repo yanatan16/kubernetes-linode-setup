@@ -1,2 +1,6 @@
-DOCKER_OPTS="--bridge=cbr0 --iptables=false --ip-masq=false"
+if [[ -z ${FLANNEL_SUBNET} ]]
+  DOCKER_OPTS="--bridge=cbr0 --iptables=false --ip-masq=false"
+else
+  DOCKER_OPTS="--iptables=false --ip-masq=false --bip=${FLANNEL_SUBNET} --mtu=${FLANNEL_MTU}"
+endif
 DOCKER_NOFILE=1000000
