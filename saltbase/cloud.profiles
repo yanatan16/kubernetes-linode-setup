@@ -1,0 +1,8 @@
+base:
+  provider: linode
+  image: Ubuntu 15.04
+  size: Linode 1024
+  location: Dallas, TX, USA
+  script: bootstrap-salt
+  script_args: git v2015.5.5
+  private_ip: true

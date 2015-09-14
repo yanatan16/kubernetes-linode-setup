@@ -1,7 +1,7 @@
 {
     "Network": "10.0.0.0/8",
     "SubnetLen": 20,
-    "SubnetMin": "10.0.0.0",
+    "SubnetMin": "10.1.0.0",
     "SubnetMax": "10.11.0.0",
     "Backend": {
         "Type": "udp",

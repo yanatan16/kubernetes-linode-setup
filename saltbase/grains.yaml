@@ -1,0 +1,6 @@
+api_servers: kube-master-01
+etcd_servers: http://kube-master-01:4001
+cloud: linode
+network_mode: flannel
+roles:
+  - kubernetes-pool

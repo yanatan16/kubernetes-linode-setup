@@ -1,0 +1,6 @@
+# Linode
+linode:
+  provider: linode
+  apikey: <API KEY>
+  password: <ROOT PASSWORD>
+  deploy: True
